@@ -1,0 +1,54 @@
+{
+  "kind": "collectionType",
+  "collectionName": "properties",
+  "info": {
+    "name": "Properties"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "rooms": {
+      "type": "integer",
+      "required": true
+    },
+    "parking": {
+      "type": "integer",
+      "required": true
+    },
+    "wc": {
+      "type": "integer",
+      "required": true
+    },
+    "description": {
+      "type": "richtext",
+      "required": true
+    },
+    "price": {
+      "type": "biginteger",
+      "required": true
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "category": {
+      "model": "categories"
+    },
+    "agent": {
+      "model": "agent"
+    }
+  }
+}
